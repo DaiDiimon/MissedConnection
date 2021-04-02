@@ -9,9 +9,20 @@
 /**
  * 
  */
-UCLASS()
+UCLASS(BlueprintType)
 class MISSEDCONNECTION_API UDA_Cutscene : public UDataAsset
 {
 	GENERATED_BODY()
+
+public:
+
+	UPROPERTY(EditAnywhere, BlueprintReadONly)
+	FString name;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	TArray<UTexture2D*> images;
+
+	UFUNCTION(BlueprintPure)
+	int32 Count();
 	
 };
