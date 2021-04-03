@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "ConvesrationManager.h"
+
 #include "ConversationPartner.generated.h"
 
 UCLASS()
@@ -22,5 +24,11 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void PlayAnimation(EConversationAnimation animation);
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void Look(bool state, float time);
 
 };

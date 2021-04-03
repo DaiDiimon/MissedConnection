@@ -1,10 +1,6 @@
-you 
+you "So... how's it going?"
 
-"So... how's it going?"
-
-me
-
-"Not much how about you?"
+me "Not much how about you?"
 
 wait 2
 
@@ -12,9 +8,7 @@ look on 1
 
 animate laugh
 
-you
-
-"THE END TIMES ARE COMING"
+you "THE END TIMES ARE COMING"
 
 wait 5
 
@@ -28,7 +22,7 @@ branch {
 
 end
 
-label joke
+LABEL joke
 
 animate surprise
 
@@ -39,7 +33,7 @@ wait 3
 end
 
 
-label comrade
+LABEL comrade
 
 me "Well, ggs i guess"
 
