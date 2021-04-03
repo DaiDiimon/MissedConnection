@@ -8,6 +8,9 @@
 
 #include "ConversationPartner.generated.h"
 
+class UConversationSpeaker;
+
+
 UCLASS()
 class MISSEDCONNECTION_API AConversationPartner : public AActor
 {
@@ -16,6 +19,10 @@ class MISSEDCONNECTION_API AConversationPartner : public AActor
 public:	
 	// Sets default values for this actor's properties
 	AConversationPartner();
+
+	UPROPERTY(VisibleAnywhere)
+	UConversationSpeaker* speaker;
+
 
 protected:
 	// Called when the game starts or when spawned

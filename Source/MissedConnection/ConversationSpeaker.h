@@ -6,6 +6,8 @@
 #include "Components/ActorComponent.h"
 #include "ConversationSpeaker.generated.h"
 
+class UConvesrationManager;
+class UAudioComponent;
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class MISSEDCONNECTION_API UConversationSpeaker : public UActorComponent
@@ -16,13 +18,68 @@ public:
 	// Sets default values for this component's properties
 	UConversationSpeaker();
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	bool left_speaker;
+
+	UPROPERTY(EditAnywhere)
+	float speed = 10;
+
+	UPROPERTY(EditAnywhere)
+	float wait_time = 2;
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+	void UpdateDialogueUI(const FString& text);
+
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
+
+	
+
+	UPROPERTY(VisibleAnywhere)
+	UConvesrationManager* conversation_manager;
+
+	UPROPERTY(VisibleAnywhere)
+	UAudioComponent* audio_component;
+
+	UPROPERTY(EditAnywhere)
+	USoundBase* period_sound;
+
+	UPROPERTY(EditAnywhere)
+	USoundBase* question_sound;
+
+	UPROPERTY(EditAnywhere)
+	USoundBase* exclamation_sound;
+
+	UPROPERTY(EditAnywhere)
+	TArray<USoundBase*> vocal_sounds;
+
+private:
+	void ReadNextChar();
 
 public:	
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
+	void StartDialogue(FString d);
+
+	void SetManager(UConvesrationManager* cm);
+
+	void SetAudioComponent(UAudioComponent* ac);
+
+private:
+
+	int read_index = 0;
+
+	FString dialogue;
+
+	bool dialogue_active = false;
+
+	float dialogue_timer;
+
+	bool wait_timer_active = false;
+
+	float wait_timer = 0;
+	
 		
 };

@@ -4,6 +4,7 @@
 #include "ConvesrationManager.h"
 #include "ConversationPartner.h"
 #include "ConversationPlayer.h"
+#include "ConversationSpeaker.h"
 #include "Containers/Map.h"
 #include "Internationalization/Regex.h"
 #include "Misc/FileHelper.h"
@@ -24,6 +25,8 @@ void UConvesrationManager::BeginPlay()
 {
 	Super::BeginPlay();
 
+	player->speaker->SetManager(this);
+	partner->speaker->SetManager(this);
 
 	// ...
 	

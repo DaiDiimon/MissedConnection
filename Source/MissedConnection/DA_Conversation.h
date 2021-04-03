@@ -6,13 +6,6 @@
 #include "Engine/DataAsset.h"
 #include "DA_Conversation.generated.h"
 
-UENUM(BlueprintType)
-enum class EConversationType : uint8
-{
-	INSIDE	UMETA(DisplayName = "Inside"),
-	OUTSIDE UMETA(DisplayName = "Outside")
-};
-
 /**
  * 
  */
@@ -24,14 +17,8 @@ class MISSEDCONNECTION_API UDA_Conversation : public UDataAsset
 public:
 	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-	EConversationType conversation_type;
+	bool inside;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-	FString filename;
-
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
-	USoundBase *music;
-
-
-	
+	FString filename;	
 };

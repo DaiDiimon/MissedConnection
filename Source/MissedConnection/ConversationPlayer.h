@@ -6,6 +6,8 @@
 #include "GameFramework/Pawn.h"
 #include "ConversationPlayer.generated.h"
 
+class UConversationSpeaker;
+
 UCLASS()
 class MISSEDCONNECTION_API AConversationPlayer : public APawn
 {
@@ -14,6 +16,9 @@ class MISSEDCONNECTION_API AConversationPlayer : public APawn
 public:
 	// Sets default values for this pawn's properties
 	AConversationPlayer();
+
+	UPROPERTY(VisibleAnywhere)
+	UConversationSpeaker* speaker;
 
 protected:
 	// Called when the game starts or when spawned
