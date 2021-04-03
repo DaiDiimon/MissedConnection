@@ -9,7 +9,7 @@
 class UConvesrationManager;
 class UAudioComponent;
 
-UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
+UCLASS( ClassGroup=(Custom), Blueprintable, meta=(BlueprintSpawnableComponent) )
 class MISSEDCONNECTION_API UConversationSpeaker : public UActorComponent
 {
 	GENERATED_BODY()
@@ -25,16 +25,23 @@ public:
 	float speed = 10;
 
 	UPROPERTY(EditAnywhere)
-	float wait_time = 2;
+	float wait_time = 1;
 
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
 	void UpdateDialogueUI(const FString& text);
 
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+	void StartDialogueUI();
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+	void EndDialogueUI();
+
+	UFUNCTION(BlueprintCallable)
+	void SetAudioComponent(UAudioComponent* ac);
+
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
-
-	
 
 	UPROPERTY(VisibleAnywhere)
 	UConvesrationManager* conversation_manager;
@@ -64,8 +71,6 @@ public:
 	void StartDialogue(FString d);
 
 	void SetManager(UConvesrationManager* cm);
-
-	void SetAudioComponent(UAudioComponent* ac);
 
 private:
 

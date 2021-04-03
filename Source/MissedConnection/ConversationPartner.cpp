@@ -9,12 +9,8 @@ AConversationPartner::AConversationPartner()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = false;
-	UAudioComponent* ac = CreateDefaultSubobject<UAudioComponent>(FName("Audio Component"));
-	ac->SetupAttachment(RootComponent);
-
-	speaker = CreateDefaultSubobject<UConversationSpeaker>(TEXT("Speaker"));
-	AddOwnedComponent(speaker);
-	speaker->SetAudioComponent(ac);
+	audio_component = CreateDefaultSubobject<UAudioComponent>(FName("Audio Component"));
+	audio_component->SetupAttachment(RootComponent);
 
 }
 

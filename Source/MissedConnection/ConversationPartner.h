@@ -5,11 +5,10 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "ConvesrationManager.h"
-
 #include "ConversationPartner.generated.h"
 
 class UConversationSpeaker;
-
+class UAudioComponent;
 
 UCLASS()
 class MISSEDCONNECTION_API AConversationPartner : public AActor
@@ -20,8 +19,11 @@ public:
 	// Sets default values for this actor's properties
 	AConversationPartner();
 
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	UConversationSpeaker* speaker;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	UAudioComponent* audio_component;
 
 
 protected:

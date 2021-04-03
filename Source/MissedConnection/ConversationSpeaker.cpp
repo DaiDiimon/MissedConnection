@@ -3,6 +3,7 @@
 #include "ConvesrationManager.h"
 #include "Components/AudioComponent.h"
 #include "ConversationSpeaker.h"
+#include "Utility.h"
 
 // Sets default values for this component's properties
 UConversationSpeaker::UConversationSpeaker()
@@ -26,11 +27,10 @@ void UConversationSpeaker::BeginPlay()
 
 void UConversationSpeaker::ReadNextChar()
 {
-	FString text = dialogue.Left(read_index++);
+	FString text = dialogue.Left(read_index+1);
 	UpdateDialogueUI(text);
-
 	if (!audio_component->IsPlaying()) {
-		TCHAR character = text[read_index - 1];
+		TCHAR &character = dialogue[read_index];
 		switch (character) {
 			case '.':
 				audio_component->Sound = period_sound;
@@ -49,11 +49,12 @@ void UConversationSpeaker::ReadNextChar()
 		}
 		audio_component->Play();
 	}
-
+	read_index++;
 
 	if (read_index < dialogue.Len()) {
 		// Delay next letter
 		dialogue_timer = 1 / speed;
+		
 	}
 	else {
 		// Dialogue over
@@ -86,6 +87,7 @@ void UConversationSpeaker::TickComponent(float DeltaTime, ELevelTick TickType, F
 	if (wait_timer_active) {
 		if (wait_timer < 0) {
 			wait_timer_active = false;
+			EndDialogueUI();
 			conversation_manager->Continue();
 		}
 		else {
@@ -97,6 +99,7 @@ void UConversationSpeaker::TickComponent(float DeltaTime, ELevelTick TickType, F
 
 void UConversationSpeaker::StartDialogue(FString d)
 {
+	StartDialogueUI();
 	dialogue = d;
 	dialogue_active = true;
 	ReadNextChar();

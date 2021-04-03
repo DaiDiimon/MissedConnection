@@ -7,6 +7,8 @@
 #include "ConversationPlayer.generated.h"
 
 class UConversationSpeaker;
+class UAudioComponent;
+
 
 UCLASS()
 class MISSEDCONNECTION_API AConversationPlayer : public APawn
@@ -17,8 +19,11 @@ public:
 	// Sets default values for this pawn's properties
 	AConversationPlayer();
 
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	UConversationSpeaker* speaker;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	UAudioComponent* audio_component;
 
 protected:
 	// Called when the game starts or when spawned

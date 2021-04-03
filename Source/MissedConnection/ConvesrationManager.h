@@ -24,10 +24,10 @@ public:
 	// Sets default values for this component's properties
 	UConvesrationManager();
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditInstanceOnly, BlueprintReadOnly)
 	AConversationPlayer* player;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditInstanceOnly, BlueprintReadOnly)
 	AConversationPartner* partner;
 
 protected:
@@ -35,27 +35,25 @@ protected:
 	virtual void BeginPlay() override;
 
 private:
-	typedef void (UConvesrationManager::*Command)(FString);
+	typedef bool (UConvesrationManager::*Command)(FString);
 
 	bool ResolveCommand(FString command, FString args);
 
-	void Look(FString args);
+	bool Look(FString args);
 
-	void PlayAnimation(FString args);
+	bool PlayAnimation(FString args);
 
-	void Me(FString args);
+	bool Me(FString args);
 
-	void You(FString args);
+	bool You(FString args);
 
-	void Branch(FString args);
+	bool Branch(FString args);
 
-	void End(FString args);
+	bool End(FString args);
 
-	void Wait(FString args);
+	bool Wait(FString args);
 
 	void SetupLabels();
-
-	void Speak(bool partner_speaking);
 
 	void WaitFor(float seconds);
 

@@ -20,5 +20,8 @@ public:
 	bool inside;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	FString title;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	FString filename;	
 };
