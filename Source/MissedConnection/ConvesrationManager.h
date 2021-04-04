@@ -8,9 +8,16 @@
 
 UENUM(BlueprintType)
 enum class EConversationAnimation : uint8 {
-	IDLE		UMETA(DisplayName = "Idle"),
-	SURPRISE	UMETA(DisplayName = "Surprise"),
-	LAUGH		UMETA(DisplayName = "Laugh")
+	IDLE		UMETA(DisplayName = "IDLE"),
+	JOLLY		UMETA(DisplayName = "JOLLY"),
+	DEJECTED	UMETA(DisplayName = "DEJECTED"),
+	DISAGREE	UMETA(DisplayName = "DISAGREE"),
+	LOOKAROUND	UMETA(DisplayName = "LOOKAROUND"),
+	NOWAY		UMETA(DisplayName = "NOWAY"),
+	POINT		UMETA(DisplayName = "POINT"),
+	SHRUG		UMETA(DisplayName = "SHRUG"),
+	WONDERING	UMETA(DisplayName = "WONDERING"),
+	FIGHT		UMETA(DisplayName = "FIGHT")
 };
 
 UENUM(BlueprintType)
@@ -117,9 +124,16 @@ private:
 	int read_index = 0;
 
 	TMap<FString, EConversationAnimation> animation_map = {
-		{TEXT("surprise"), EConversationAnimation::SURPRISE},
-		{TEXT("laugh"), EConversationAnimation::LAUGH},
-		{TEXT("idle"), EConversationAnimation::IDLE}
+		{TEXT("idle"), EConversationAnimation::IDLE},
+		{TEXT("jolly"), EConversationAnimation::JOLLY},
+		{TEXT("dejected"), EConversationAnimation::DEJECTED},
+		{TEXT("disagree"), EConversationAnimation::DISAGREE},
+		{TEXT("lookaround"), EConversationAnimation::LOOKAROUND},
+		{TEXT("noway"), EConversationAnimation::NOWAY},
+		{TEXT("point"), EConversationAnimation::POINT},
+		{TEXT("shrug"), EConversationAnimation::SHRUG},
+		{TEXT("wondering"), EConversationAnimation::WONDERING},
+		{TEXT("fight"), EConversationAnimation::FIGHT}
 	};
 
 	TMap<FString, Command> command_map = {
