@@ -1,8 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
+#include "ConversationSpeaker.h"
 
 #include "ConvesrationManager.h"
 #include "Components/AudioComponent.h"
-#include "ConversationSpeaker.h"
 #include "Utility.h"
 
 // Sets default values for this component's properties

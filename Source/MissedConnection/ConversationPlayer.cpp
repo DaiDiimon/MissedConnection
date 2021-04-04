@@ -1,8 +1,8 @@
 // Fill out your copyright notice in the Description page of Project Settings.
+#include "ConversationPlayer.h"
 
 #include "ConversationSpeaker.h"
 #include "Components/AudioComponent.h"
-#include "ConversationPlayer.h"
 
 // Sets default values
 AConversationPlayer::AConversationPlayer()

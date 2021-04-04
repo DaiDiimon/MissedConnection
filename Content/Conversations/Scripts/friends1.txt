@@ -8,7 +8,7 @@ you "Don't really know about where to go quite yet."
 
 you "You?"
 
-me ("Been here a while now") ("Probably longer than you at least")
+branch ("Been here a while now") ("Probably longer than you at least")
 
 you "That so?"
 
@@ -18,7 +18,7 @@ look on 1
 
 you "Well, then, why would you possible come here on a Saturday night"
 
-me ("It's my first time here!", first) ("I dunno, a friend recommended it...")
+branch ("It's my first time here!", first) ("I dunno, a friend recommended it...")
 
 animate shrug
 

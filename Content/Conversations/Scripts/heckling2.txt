@@ -1,18 +1,14 @@
 flag heckling2
 
-look on 1
+me "Alright, they're calling for next, you're up!"
 
-animate fight
+look on .1
 
-you "Alright, they're calling for next, you're up!"
+you "Me!?"
 
-me "Me!?"
+you "Nah, I already said it's gotta be you."
 
-me "Nah, I already said it's gotta be you."
-
-you "Awww, don't be like that!"
-
-branch ("Well, here goes", bgoes) ("Nope, it's definitely you")
+branch ("Well, here goes", bgoes) ("Awww, don't be like that!")
 
 animate disagree
 
@@ -20,9 +16,11 @@ you "Hmm, I'm sorry Dave, I'm afriad I can't do that."
 
 me "So that's how it is..."
 
+me "Lemme shut you down then HAL..."
+
 animate noway
 
-me "Lemme shut you down then HAL..."
+wait 2
 
 animate idle
 
@@ -46,6 +44,6 @@ animate idle
 
 wait 1
 
-you "Uhhh... someones coming towards us"
+you "Uhhh... someone's coming towards us"
 
 end

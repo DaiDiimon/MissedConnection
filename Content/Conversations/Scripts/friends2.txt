@@ -1,12 +1,8 @@
-me "So what've you been up to around here?"
+you "So what've you been up to around here?"
 
 look on .5
 
-you "You tell me, I just got here."
-
-you "What's good around here?"
-
-branch ("I don't really go out that often...", myself) ("...")
+branch ("You tell me, I just got here.", here) ("Nothing.")
 
 look off .5
 
@@ -16,38 +12,42 @@ you "Uhhhh, okay."
 
 end
 
-LABEL myself
+LABEL here
 
 flag friend2
 
-you "Oh."
+you "Well, clearly I don't know if I came here..."
 
-animate jolly
-
-you "Well, guess I ain't getting advice from you!"
-
-me "Jeez, thanks..."
-
-you "No problem!"
+me "Yeah, you can say that again!"
 
 wait 1
 
 animate wondering
 
-wait 2
+wait 1
 
-you "Actually, I didn't really go out that much before moving here."
+branch ("You know... I'm not that active either.") ("You should probably go out more.")
 
-you "Kept myself busy with work."
+look on .1
 
-you "I wanna try and change that."
+animate idle
+
+me "In fact, I didn't go out much in the last place I lived."
+
+me "Kept myself busy with work."
 
 wait 1
 
-me "I..."
+me "I wanna try and change that."
 
 wait 1
 
-me "...can respect that."
+you "I..."
+
+look off 2
+
+wait 1
+
+you "...can respect that."
 
 end
