@@ -3,6 +3,8 @@ animate laugh
 
 you "No you can't, that's illegal!"
 
+look on 5
+
 animate idle
 
 you "Try it bitch!"
