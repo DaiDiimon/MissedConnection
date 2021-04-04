@@ -50,14 +50,24 @@ bool UConvesrationManager::ResolveCommand(FString command, FString args)
 
 bool UConvesrationManager::Look(FString args)
 {
-	
+	FString state_string, duration_string;
+	args.Split(TEXT(" "), &state_string, &duration_string);
 
+	bool state = state_string.Equals(TEXT("on")) ? true : false;
+	float duration = FCString::Atof(*duration_string);
+	partner->Look(state, duration);
 	return true;
 }
 
 bool UConvesrationManager::PlayAnimation(FString args)
 {
-	
+	if (animation_map.Contains(args)) {
+		EConversationAnimation animation = animation_map[args];
+		partner->PlayAnimation(animation);
+	}
+	else {
+		UE_LOG(LogTemp, Error, TEXT("INVALID ANIMATION"));
+	}
 	return true;
 }
 
@@ -75,18 +85,7 @@ bool UConvesrationManager::You(FString args)
 	return false;
 }
 
-bool UConvesrationManager::Branch(FString args)
-{
-	return false;
-}
 
-bool UConvesrationManager::End(FString args)
-{
-	// Exit the scene
-	Utility::Print("END");
-
-	return false;
-}
 
 bool UConvesrationManager::Wait(FString args)
 {
@@ -98,20 +97,55 @@ bool UConvesrationManager::Wait(FString args)
 	return false;
 }
 
+bool UConvesrationManager::Branch(FString args)
+{
+	FRegexPattern pattern(TEXT("\\(\\s*\".+?\"\\s*(?:,\\s*\\w+)*\\s*\\)")); 
+	FRegexMatcher matcher(pattern, args);
+	TArray<FBranchInfo> branches;
+
+	while (matcher.FindNext()) {
+		FBranchInfo branch;
+		FString match = matcher.GetCaptureGroup(0).TrimStartAndEnd();
+		int open_quote = match.Find(TEXT("\""));
+		int close_quote = match.Find(TEXT("\""), ESearchCase::CaseSensitive, ESearchDir::FromStart, open_quote + 1);
+
+		branch.dialogue = match.Mid(open_quote + 1, close_quote - open_quote - 1).TrimStartAndEnd();
+		int comma = match.Find(TEXT(","), ESearchCase::CaseSensitive, ESearchDir::FromStart, close_quote + 1);
+
+		if (comma != -1) {
+			FString label = match.RightChop(comma + 1).LeftChop(1).TrimStartAndEnd();
+			branch.has_label = true;
+			branch.label = label;
+		}
+		else {
+			branch.has_label = false;
+		}
+		
+
+		branches.Add(branch);
+	}
+
+	BranchBlueprint(branches);
+	return false;
+}
+
+bool UConvesrationManager::End(FString args)
+{
+
+	return false;
+}
+
 void UConvesrationManager::Continue()
 {
 	while (read_index < text.Len()) {
 		int new_line_index = text.Find(TEXT("\n"), ESearchCase::CaseSensitive, ESearchDir::FromStart, read_index);
 		if (new_line_index == -1) new_line_index = text.Len();
 		FString line = text.Mid(read_index, new_line_index - read_index).TrimStartAndEnd();
-		Utility::Print("NEXT");
-		Utility::Print(line);
 		if (line.Len() == 0) {
 			read_index = new_line_index + 1;
 		}
 		else {
 			int space_index = line.Find(TEXT(" "), ESearchCase::CaseSensitive, ESearchDir::FromStart);
-			Utility::Print(FString::FromInt(space_index));
 			FString command, args;
 			if (space_index != -1) {
 				command = line.Left(space_index).TrimStartAndEnd();
@@ -120,8 +154,6 @@ void UConvesrationManager::Continue()
 			else {
 				command = line;
 			}
-			Utility::Print(command);
-			Utility::Print(args);
 			bool status = ResolveCommand(command, args);
 			read_index = new_line_index + 1;
 			// If a command returns false, then we don't want to continue. Something must call Continue later on though!
@@ -138,7 +170,7 @@ void UConvesrationManager::SetupLabels()
 		int new_line_index = text.Find(TEXT("\n"), ESearchCase::CaseSensitive, ESearchDir::FromStart, label_index + 6);
 		if (new_line_index == -1) break;
 		// 6 is length of LABEL with space
-		FString tag = text.Mid(label_index + 6, new_line_index - label_index + 6);
+		FString tag = text.Mid(label_index + 6, new_line_index - (label_index + 6));
 		if (tag.Len() == 0) {
 			UE_LOG(LogTemp, Error, TEXT("Invalid Label"));
 		}
@@ -181,5 +213,12 @@ FString UConvesrationManager::ReadFile(FString filename)
 	}
 
 	return text;
+}
+
+void UConvesrationManager::JumpToLabel(FString label)
+{
+	if (label_map.Contains(label)) {
+		read_index = label_map[label];
+	}
 }
 

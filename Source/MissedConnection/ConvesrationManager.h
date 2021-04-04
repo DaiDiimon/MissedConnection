@@ -4,12 +4,29 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "Internationalization/Regex.h"
 #include "ConvesrationManager.generated.h"
 
 UENUM(BlueprintType)
 enum class EConversationAnimation : uint8 {
 	SURPRISE	UMETA(DisplayName = "Surprise"),
 	LAUGH		UMETA(DisplayName = "Laugh")
+};
+
+
+USTRUCT(BlueprintType)
+struct FBranchInfo {
+	GENERATED_BODY()
+public:
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	FString dialogue;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	bool has_label;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	FString label;
+
 };
 
 class AConversationPartner;
@@ -34,24 +51,29 @@ protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+	void BranchBlueprint(const TArray<FBranchInfo>& branches);
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+	void EndBlueprint();	
+	
+
 private:
 	typedef bool (UConvesrationManager::*Command)(FString);
 
 	bool ResolveCommand(FString command, FString args);
 
-	bool Look(FString args);
-
 	bool PlayAnimation(FString args);
 
-	bool Me(FString args);
+	bool Look(FString args);
 
 	bool You(FString args);
+
+	bool Wait(FString args);
 
 	bool Branch(FString args);
 
 	bool End(FString args);
-
-	bool Wait(FString args);
 
 	void SetupLabels();
 
@@ -59,11 +81,18 @@ private:
 
 public:	
 	virtual void TickComponent(float DeltaTime, enum ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+
+	UFUNCTION(BlueprintCallable)
+	bool Me(FString args);
 	
+	UFUNCTION(BlueprintCallable)
 	void Continue();
 
 	UFUNCTION(BlueprintCallable) 
 	FString ReadFile(FString filename);
+
+	UFUNCTION(BlueprintCallable)
+	void JumpToLabel(FString label);
 
 
 private:
@@ -91,9 +120,6 @@ private:
 	};
 
 	TMap<FString, int> label_map;
-
-	//const FRegexPattern new_line_regex;
-	//const FRegexPattern branch_regex;
 
 		
 };

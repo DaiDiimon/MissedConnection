@@ -100,6 +100,7 @@ void UConversationSpeaker::TickComponent(float DeltaTime, ELevelTick TickType, F
 void UConversationSpeaker::StartDialogue(FString d)
 {
 	StartDialogueUI();
+	read_index = 0;
 	dialogue = d;
 	dialogue_active = true;
 	ReadNextChar();

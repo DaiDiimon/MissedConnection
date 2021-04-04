@@ -1,7 +1,20 @@
-you "So... how's it going?"
 
-me "Not much how about you?"
+branch   (   "That's definitely wrong"   )  ("A comrade, finally"    ,  comrade   )    ("i'll break ur fukin kneecaps"   ,     joke    )
 
-wait 2
+you "No you can't, that's illegal!"
+
+end
+
+LABEL joke
+
+you "WHAT?"
+
+wait 3
+
+end
+
+LABEL comrade
+
+me "Well, ggs i guess"
 
 end
