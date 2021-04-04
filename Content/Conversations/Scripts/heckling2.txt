@@ -1,0 +1,51 @@
+flag heckling2
+
+look on 1
+
+animate fight
+
+you "Alright, they're calling for next, you're up!"
+
+me "Me!?"
+
+me "Nah, I already said it's gotta be you."
+
+you "Awww, don't be like that!"
+
+branch ("Well, here goes", bgoes) ("Nope, it's definitely you")
+
+animate disagree
+
+you "Hmm, I'm sorry Dave, I'm afriad I can't do that."
+
+me "So that's how it is..."
+
+animate noway
+
+me "Lemme shut you down then HAL..."
+
+animate idle
+
+you "Hold up, someone's coming this way..."
+
+me "It's your time to shine, baby!"
+
+end
+
+LABEL bgoes
+
+animate point
+
+look off .1
+
+you "Hell yea, here we go!"
+
+you "Go get em!!!"
+
+animate idle
+
+wait 1
+
+you "Uhhh... someones coming towards us"
+
+end

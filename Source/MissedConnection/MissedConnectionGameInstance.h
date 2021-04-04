@@ -23,10 +23,10 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	TSet<FString> viewed_conversations;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	UDA_Conversation *conversation_to_load;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FString scene_to_return_to;
 	
 };

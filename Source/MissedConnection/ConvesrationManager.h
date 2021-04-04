@@ -22,12 +22,15 @@ enum class EConversationAnimation : uint8 {
 
 UENUM(BlueprintType)
 enum class EConversationFlag : uint8 {
-	I_FIRSTMEET		UMETA(DisplayName = "First Meet"),
-	I_HECKLING1		UMETA(DisplayName = "Heckling 1"),
-	I_HECKLING2		UMETA(DisplayName = "Heckling 2"),
-	O_KICKOUT1		UMETA(DisplayName = "Kickout 1"),
-	O_KICKOUT2		UMETA(DisplayName = "Kickout 2"),
-	O_RUSHAWAY		UMETA(DisplayName = "Rush Away")
+	FIRSTMEET		UMETA(DisplayName = "First Meet"),
+	HECKLING1		UMETA(DisplayName = "Heckling 1"),
+	HECKLING2		UMETA(DisplayName = "Heckling 2"),
+	FRIENDS1		UMETA(DisplayName = "Friends 1"),
+	FRIENDS2		UMETA(DisplayName = "Friends 2"),
+	KICKOUT1		UMETA(DisplayName = "Kickout 1"),
+	KICKOUT2		UMETA(DisplayName = "Kickout 2"),
+	RUSHAWAY		UMETA(DisplayName = "Rush Away"),
+	FINALASOLO		UMETA(DisplayName = "Final A Solo")
 };
 
 
@@ -148,12 +151,13 @@ private:
 	};
 
 	TMap<FString, EConversationFlag> flag_map = {
-		{ TEXT("firstmeet"), EConversationFlag::I_FIRSTMEET },
-		{ TEXT("heckling1"), EConversationFlag::I_HECKLING1 },
-		{ TEXT("heckling2"), EConversationFlag::I_HECKLING2 },
-		{ TEXT("kickout1"), EConversationFlag::O_KICKOUT1 },
-		{ TEXT("kickout2"), EConversationFlag::O_KICKOUT2 },
-		{ TEXT("rushaway"), EConversationFlag::O_RUSHAWAY }
+		{ TEXT("firstmeet"), EConversationFlag::FIRSTMEET },
+		{ TEXT("heckling1"), EConversationFlag::HECKLING1 },
+		{ TEXT("heckling2"), EConversationFlag::HECKLING2 },
+		{ TEXT("kickout1"), EConversationFlag::KICKOUT1 },
+		{ TEXT("kickout2"), EConversationFlag::KICKOUT2 },
+		{ TEXT("rushaway"), EConversationFlag::RUSHAWAY },
+		{ TEXT("finalasolo"), EConversationFlag::FINALASOLO }
 	};
 
 	TMap<FString, int> label_map;

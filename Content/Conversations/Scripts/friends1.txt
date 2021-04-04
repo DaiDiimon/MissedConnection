@@ -1,0 +1,45 @@
+flag friends1
+
+animate wondering
+
+you "You know, I'm pretty new to town."
+
+you "Don't really know about where to go quite yet."
+
+you "You?"
+
+me ("Been here a while now") ("Probably longer than you at least")
+
+you "That so?"
+
+animate idle
+
+look on 1
+
+you "Well, then, why would you possible come here on a Saturday night"
+
+me ("It's my first time here!", first) ("I dunno, a friend recommended it...")
+
+animate shrug
+
+you "Jeez, some trash taste right there!"
+
+me "Hey, don't say that!"
+
+wait 2
+
+me "Not that you're wrong..."
+
+end
+
+LABEL first
+
+animate fight
+
+you "Ooh, got suckered in by that flyer too then huh?"
+
+you "Well, we can suffer together at least."
+
+me "Yeah, guess that's true."
+
+end

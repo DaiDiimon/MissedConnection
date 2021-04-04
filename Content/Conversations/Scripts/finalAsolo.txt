@@ -1,0 +1,25 @@
+me "..."
+
+wait 2
+
+me "Why did I even come back here?"
+
+wait 2
+
+me "No, that's not it."
+
+me "I'm here because..."
+
+branch ("I'm gonna punch the bartender!") ("He might be here...", truth)
+
+me "Yeah, ima sock him real good!"
+
+end
+
+LABEL truth
+
+flag finalasolo
+
+me "Yeah..."
+
+end

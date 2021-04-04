@@ -1,0 +1,49 @@
+flag heckling1
+
+animate jolly
+
+you "LMAOOOOO, do you hear this guy?"
+
+me "I know, what that supposed to be a joke???"
+
+you "Isn't there a single good comedian in this town?"
+
+me "Haha, doesn't seem like it!"
+
+look on 1
+
+you "Sure got that right!"
+
+animate idle
+
+look off 3
+
+wait 1
+
+you "C'mon, you know we can do better THAT!"
+
+me "No, no, no, I already told you I can't!"
+
+you "Awwww, c'mon, give it a shot!"
+
+branch ("Man, piss off!", piss) ("Alright...")
+
+me "But you got go first!"
+
+animate dejected
+
+you "Ah."
+
+you "No fair!"
+
+end
+
+LABEL piss
+
+animate jolly
+
+you "There ya go! You're a natural!"
+
+me "Jeez..."
+
+end

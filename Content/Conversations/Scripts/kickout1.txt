@@ -1,0 +1,47 @@
+animate lookaround
+
+you "They actually kicked us out."
+
+you "Oh my god, oh my god, oh my god."
+
+you "I wasn't trying to be a bother..."
+
+me "Hey..."
+
+branch ("Man, cut it out.", bad) ("It's okay, relax.")
+
+flag kickout1
+
+me "Breathe."
+
+wait 1
+
+animate idle
+
+wait 1
+
+me "You're good."
+
+look on 1
+
+you "Thanks, I needed that."
+
+me "Yeah, anytime."
+
+end
+
+LABEL bad
+
+look on .1
+
+animate noway
+
+you "Huh!?"
+
+animate idle
+
+you "Oh."
+
+you "Yeah, you're right..."
+
+end

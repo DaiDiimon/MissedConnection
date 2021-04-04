@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Engine/DataAsset.h"
+#include "ConvesrationManager.h"
 #include "DA_Conversation.generated.h"
 
 /**
@@ -16,6 +17,12 @@ class MISSEDCONNECTION_API UDA_Conversation : public UDataAsset
 
 public:
 	
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	TSet<EConversationFlag> required_flags;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	bool A_speaker;
+
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	bool inside;
 

@@ -1,0 +1,35 @@
+flag firstmeet
+
+you "Um, excuse me?"
+
+look on 2
+
+wait 1
+
+you "What do you think about the open mic?"
+
+branch ("It kinda blows.") ("Not really feeling it.")
+
+animate jolly
+
+look off .1
+
+you "Yeah, he's really blowing it right!??"
+
+animate idle
+
+look on 3
+
+wait 1
+
+you "I mean..."
+
+you "I don't think I could do much better..."
+
+me "Anyone could do better than this fool."
+
+you "Yeah, maybe."
+
+wait 1
+
+end

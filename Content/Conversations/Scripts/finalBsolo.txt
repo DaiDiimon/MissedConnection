@@ -1,0 +1,22 @@
+
+me "Wow."
+
+me "I knew the chances were low, but..."
+
+me "I didn't actually expect to find something."
+
+wait 1
+
+me "A phone number, huh?"
+
+wait 1
+
+me "..................."
+
+wait 2
+
+you "*click*"
+
+you "Hello?"
+
+end

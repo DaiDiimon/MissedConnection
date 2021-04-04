@@ -1,0 +1,37 @@
+flag rushaway
+
+animate wondering
+
+you "It's getting kinda late, isn't it?"
+
+me "Oh shoot, I didn't notice at all!"
+
+animate jolly
+
+you "Haha!"
+
+look on 1
+
+you "Guess we were having a good time?"
+
+me "Guess so, haha."
+
+look off .1
+
+wait 1
+
+animate idle
+
+wait 5
+
+me "Umm..."
+
+me "Ah..."
+
+me "I'm heading home, see ya!"
+
+you "Huh!?"
+
+you "Wait a sec!"
+
+end

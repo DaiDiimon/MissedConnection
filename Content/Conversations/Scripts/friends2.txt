@@ -1,0 +1,53 @@
+me "So what've you been up to around here?"
+
+look on .5
+
+you "You tell me, I just got here."
+
+you "What's good around here?"
+
+branch ("I don't really go out that often...", myself) ("...")
+
+look off .5
+
+animate disagree
+
+you "Uhhhh, okay."
+
+end
+
+LABEL myself
+
+flag friend2
+
+you "Oh."
+
+animate jolly
+
+you "Well, guess I ain't getting advice from you!"
+
+me "Jeez, thanks..."
+
+you "No problem!"
+
+wait 1
+
+animate wondering
+
+wait 2
+
+you "Actually, I didn't really go out that much before moving here."
+
+you "Kept myself busy with work."
+
+you "I wanna try and change that."
+
+wait 1
+
+me "I..."
+
+wait 1
+
+me "...can respect that."
+
+end

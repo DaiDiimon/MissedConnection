@@ -1,0 +1,63 @@
+me "For real, though, I can't believe they kicked us out."
+
+animate jolly
+
+you "Yeah!"
+
+look on 2
+
+you "We weren't THAT loud."
+
+me "Yeah!"
+
+animate idle
+
+look off 1
+
+wait 2
+
+me "Though we were pretty much shitting on every single person..."
+
+animate jolly
+
+you "Haha, damn straight!"
+
+me "Hey!"
+
+me "C'mon, give them a bit more credit, they're doing their best!"
+
+animate idle
+
+you "True, can't knock 'em for that."
+
+branch ("I guess I'll head out then...", leave) ("So what now?")
+
+look on 1
+
+you "Well, I don't really trust your taste on anything."
+
+me "Hey!"
+
+you "Why don't we just sit here then?"
+
+branch ("Sure, why not?") ("No, not really feeling it.", leave)
+
+flag kickout2
+
+you "..."
+
+wait 1
+
+you "Cool."
+
+end
+
+LABEL leave
+
+you "Huh?"
+
+you "Well, alright."
+
+you "See ya."
+
+end
