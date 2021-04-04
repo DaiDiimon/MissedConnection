@@ -1,7 +1,13 @@
 
-branch   (   "That's definitely wrong"   )  ("A comrade, finally"    ,  comrade   )    ("i'll break ur fukin kneecaps"   ,     joke    )
+animate laugh
 
 you "No you can't, that's illegal!"
+
+animate idle
+
+you "Try it bitch!"
+
+animate surprise
 
 end
 

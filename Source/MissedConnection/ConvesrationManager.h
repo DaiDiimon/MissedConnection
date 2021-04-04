@@ -4,11 +4,11 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "Internationalization/Regex.h"
 #include "ConvesrationManager.generated.h"
 
 UENUM(BlueprintType)
 enum class EConversationAnimation : uint8 {
+	IDLE		UMETA(DisplayName = "Idle"),
 	SURPRISE	UMETA(DisplayName = "Surprise"),
 	LAUGH		UMETA(DisplayName = "Laugh")
 };
@@ -106,7 +106,8 @@ private:
 
 	TMap<FString, EConversationAnimation> animation_map = {
 		{TEXT("surprise"), EConversationAnimation::SURPRISE},
-		{TEXT("laugh"), EConversationAnimation::LAUGH}
+		{TEXT("laugh"), EConversationAnimation::LAUGH},
+		{TEXT("idle"), EConversationAnimation::IDLE}
 	};
 
 	TMap<FString, Command> command_map = {
