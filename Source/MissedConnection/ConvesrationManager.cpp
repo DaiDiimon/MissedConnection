@@ -8,6 +8,8 @@
 #include "Containers/Map.h"
 #include "Internationalization/Regex.h"
 #include "Misc/FileHelper.h"
+#include "Kismet/GameplayStatics.h"
+#include "MissedConnectionGameInstance.h"
 #include "Utility.h"
 
 // Sets default values for this component's properties
@@ -67,6 +69,16 @@ bool UConvesrationManager::PlayAnimation(FString args)
 	}
 	else {
 		UE_LOG(LogTemp, Error, TEXT("INVALID ANIMATION"));
+	}
+	return true;
+}
+
+bool UConvesrationManager::Flag(FString args)
+{
+	if (flag_map.Contains(args)) {
+		EConversationFlag flag = flag_map[args];
+		UMissedConnectionGameInstance* game_instance = Cast<UMissedConnectionGameInstance>(UGameplayStatics::GetGameInstance(this));
+		game_instance->acquired_flags.Add(flag);
 	}
 	return true;
 }
@@ -131,7 +143,7 @@ bool UConvesrationManager::Branch(FString args)
 
 bool UConvesrationManager::End(FString args)
 {
-
+	EndBlueprint();
 	return false;
 }
 

@@ -20,6 +20,12 @@ public:
 	bool inside;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	bool final_A_solo;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	bool final_B_solo;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 	FString title;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
