@@ -29,7 +29,7 @@ void UConversationSpeaker::ReadNextChar()
 {
 	FString text = dialogue.Left(read_index+1);
 	UpdateDialogueUI(text);
-	if (!audio_component->IsPlaying()) {
+	if (audio_component->GetPlayState() != EAudioComponentPlayState::Playing) {
 		TCHAR &character = dialogue[read_index];
 		switch (character) {
 			case '.':

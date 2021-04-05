@@ -77,6 +77,9 @@ protected:
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
 		void EndBlueprint();
 
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+		void SkipUI(bool state);
+
 
 private:
 	typedef bool (UConvesrationManager::* Command)(FString);
@@ -117,8 +120,16 @@ public:
 		void JumpToLabel(FString label);
 
 
+	//Skip until branch or end, process flags
+	UFUNCTION(BlueprintCallable)
+	void Skip();
+
+
+
 private:
 	FString text;
+
+	bool skipMode = false;
 
 	bool wait_timer_active = false;
 
@@ -154,6 +165,8 @@ private:
 		{ TEXT("firstmeet"), EConversationFlag::FIRSTMEET },
 		{ TEXT("heckling1"), EConversationFlag::HECKLING1 },
 		{ TEXT("heckling2"), EConversationFlag::HECKLING2 },
+		{ TEXT("friends1"), EConversationFlag::FRIENDS1 },
+		{ TEXT("friends2"), EConversationFlag::FRIENDS2 },
 		{ TEXT("kickout1"), EConversationFlag::KICKOUT1 },
 		{ TEXT("kickout2"), EConversationFlag::KICKOUT2 },
 		{ TEXT("rushaway"), EConversationFlag::RUSHAWAY },

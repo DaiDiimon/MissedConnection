@@ -40,6 +40,16 @@ void UConvesrationManager::BeginPlay()
 
 bool UConvesrationManager::ResolveCommand(FString command, FString args)
 {
+	if (skipMode) {
+		if (command.Equals(TEXT("branch")) || command.Equals(TEXT("end"))) {
+			skipMode = false;
+			SkipUI(false);
+		}
+		else if (!command.Equals(TEXT("fade"))) {
+			return true;
+		}
+
+	}
 	if (command_map.Contains(command)) {
 		Command func = command_map[command];
 		return (this->*func)(args);
@@ -232,5 +242,11 @@ void UConvesrationManager::JumpToLabel(FString label)
 	if (label_map.Contains(label)) {
 		read_index = label_map[label];
 	}
+}
+
+void UConvesrationManager::Skip()
+{
+	skipMode = true;
+	SkipUI(true);
 }
 
