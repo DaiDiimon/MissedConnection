@@ -17,20 +17,33 @@ enum class EConversationAnimation : uint8 {
 	POINT		UMETA(DisplayName = "POINT"),
 	SHRUG		UMETA(DisplayName = "SHRUG"),
 	WONDERING	UMETA(DisplayName = "WONDERING"),
-	FIGHT		UMETA(DisplayName = "FIGHT")
+	FIGHT		UMETA(DisplayName = "FIGHT"),
+	IFYOUSAYSO	UMETA(DisplayName = "IFYOUSAYSO"),
+	POUT		UMETA(DisplayName = "POUT"),
+	FISTPUMP	UMETA(DisplayName = "FISTPUMP"),
+	COCKY		UMETA(DisplayName = "COCKY")
 };
 
 UENUM(BlueprintType)
 enum class EConversationFlag : uint8 {
-	FIRSTMEET		UMETA(DisplayName = "First Meet"),
-	HECKLING1		UMETA(DisplayName = "Heckling 1"),
-	HECKLING2		UMETA(DisplayName = "Heckling 2"),
-	FRIENDS1		UMETA(DisplayName = "Friends 1"),
-	FRIENDS2		UMETA(DisplayName = "Friends 2"),
-	KICKOUT1		UMETA(DisplayName = "Kickout 1"),
-	KICKOUT2		UMETA(DisplayName = "Kickout 2"),
-	RUSHAWAY		UMETA(DisplayName = "Rush Away"),
-	FINALASOLO		UMETA(DisplayName = "Final A Solo")
+	HECKLING1           		UMETA(DisplayName = "HECKLING1"),
+	FRIENDS1            		UMETA(DisplayName = "FRIENDS1"),	
+	KICKOUT1            		UMETA(DisplayName = "KICKOUT1"),
+	USUAL1          		    UMETA(DisplayName = "USUAL1"),
+	KICKOUT2            		UMETA(DisplayName = "KICKOUT2"),
+	RUSHAWAY            		UMETA(DisplayName = "RUSHAWAY"),
+	FIRSTMEET           		UMETA(DisplayName = "FIRSTMEET"),
+	FINALASOLO          		UMETA(DisplayName = "FINALASOLO"),
+	WORK_GAMEDEV            	UMETA(DisplayName = "WORK-GAMEDEV"),
+	WORK_WIZARD         		UMETA(DisplayName = "WORK-WIZARD"),
+	INTEREST_MUSIC          	UMETA(DisplayName = "INTEREST-MUSIC"),
+	WORK_CHEF           		UMETA(DisplayName = "WORK-CHEF"),
+	WORK_GAMEDEV_PLUS           UMETA(DisplayName = "WORK-GAMEDEV-PLUS"),
+	INTEREST_MUSIC_PLUS         UMETA(DisplayName = "INTEREST-MUSIC-PLUS"),
+	WORK_CHEF_PLUS          	UMETA(DisplayName = "WORK-CHEF-PLUS"),
+	MEMES           		    UMETA(DisplayName = "MEMES"),
+	INTEREST_COMEDY_PLUS        UMETA(DisplayName = "INTEREST-COMEDY-PLUS"),
+	WORK_WIZARD_PLUS            UMETA(DisplayName = "WORK-WIZARD-PLUS")
 };
 
 
@@ -147,7 +160,11 @@ private:
 		{TEXT("point"), EConversationAnimation::POINT},
 		{TEXT("shrug"), EConversationAnimation::SHRUG},
 		{TEXT("wondering"), EConversationAnimation::WONDERING},
-		{TEXT("fight"), EConversationAnimation::FIGHT}
+		{TEXT("fight"), EConversationAnimation::FIGHT},
+		{TEXT("ifyousayso"), EConversationAnimation::IFYOUSAYSO },
+		{TEXT("pout"), EConversationAnimation::POUT},
+		{TEXT("fistpump"), EConversationAnimation::FISTPUMP},
+		{TEXT("cocky"), EConversationAnimation::COCKY}
 	};
 
 	TMap<FString, Command> command_map = {
@@ -162,15 +179,24 @@ private:
 	};
 
 	TMap<FString, EConversationFlag> flag_map = {
-		{ TEXT("firstmeet"), EConversationFlag::FIRSTMEET },
-		{ TEXT("heckling1"), EConversationFlag::HECKLING1 },
-		{ TEXT("heckling2"), EConversationFlag::HECKLING2 },
-		{ TEXT("friends1"), EConversationFlag::FRIENDS1 },
-		{ TEXT("friends2"), EConversationFlag::FRIENDS2 },
-		{ TEXT("kickout1"), EConversationFlag::KICKOUT1 },
-		{ TEXT("kickout2"), EConversationFlag::KICKOUT2 },
-		{ TEXT("rushaway"), EConversationFlag::RUSHAWAY },
-		{ TEXT("finalasolo"), EConversationFlag::FINALASOLO }
+		{ TEXT("heckling1"), EConversationFlag::HECKLING1            },
+		{ TEXT("friends1"), EConversationFlag::FRIENDS1             },
+		{ TEXT("kickout1"), EConversationFlag::KICKOUT1             },
+		{ TEXT("usual1"), EConversationFlag::USUAL1          	 },
+		{ TEXT("kickout2"), EConversationFlag::KICKOUT2             },
+		{ TEXT("rushaway"), EConversationFlag::RUSHAWAY             },
+		{ TEXT("firstmeet"), EConversationFlag::FIRSTMEET            },
+		{ TEXT("finalasolo"), EConversationFlag::FINALASOLO           },
+		{ TEXT("work-gamedev"), EConversationFlag::WORK_GAMEDEV         },
+		{ TEXT("work-wizard"), EConversationFlag::WORK_WIZARD          },
+		{ TEXT("interest-music"), EConversationFlag::INTEREST_MUSIC       },
+		{ TEXT("work-chef"), EConversationFlag::WORK_CHEF            },
+		{ TEXT("work-gamedev-PLUS"), EConversationFlag::WORK_GAMEDEV_PLUS    },
+		{ TEXT("interest-music-PLUS"), EConversationFlag::INTEREST_MUSIC_PLUS  },
+		{ TEXT("work-chef-PLUS"), EConversationFlag::WORK_CHEF_PLUS       },
+		{ TEXT("memes"), EConversationFlag::MEMES           	 },
+		{ TEXT("interest-comedy-PLUS"), EConversationFlag::INTEREST_COMEDY_PLUS },
+		{ TEXT("work-wizard-PLUS"), EConversationFlag::WORK_WIZARD_PLUS     }
 	};
 
 	TMap<FString, int> label_map;
