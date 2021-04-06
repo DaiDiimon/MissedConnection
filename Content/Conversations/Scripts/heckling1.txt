@@ -4,7 +4,7 @@ animate jolly
 
 you "LMAOOOOO, do you hear this guy?"
 
-me "I know, what that supposed to be a joke???"
+me "I know, was that supposed to be a joke???"
 
 you "Isn't there a single good comedian in this town?"
 
@@ -20,7 +20,7 @@ look off 3
 
 wait 1
 
-you "C'mon, you know we can do better THAT!"
+you "C'mon, even we can do better THAT!"
 
 me "No, no, no, I already told you I can't!"
 

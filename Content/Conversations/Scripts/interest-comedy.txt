@@ -1,0 +1,44 @@
+look on .5
+
+you "up dog"
+
+branch ("What's 'up dog'?", updog) ("GTFO") ("I'm not an idiot.")
+
+animate pout
+
+you "Goddammit, I was sure you're the kind of person to fall for it..."
+
+end
+
+
+LABEL updog
+
+wait 3
+
+look off .1
+
+you "HELL YEA!!!!!!!!"
+
+you "WHOOOOOOOO!!!!"
+
+you "Gotcha!"
+
+wait 5
+
+me "FUCK"
+
+animate jolly
+
+you "You said you liked comedy?"
+
+animate cocky
+
+you "Well, there ya go."
+
+you "For I have shown you the pinnacle."
+
+you "We have ascended, my child."
+
+me "Goddammit, screw you..."
+
+end

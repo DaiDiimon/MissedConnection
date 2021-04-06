@@ -1,0 +1,52 @@
+look on .5
+
+you "Why the hell did you even claim you were a chef???"
+
+
+branch ("I love me some ramen noods", noods) ("To get a rise out of you") ("But I am a chef", truth)
+
+animate jolly 
+
+you "Ah, alright then, buddy, good well done!"
+
+animate disagree
+
+you "I mean, seriously, ramen???"
+
+end
+
+
+LABEL noods
+
+look off 1
+
+you "Okay, okay, good, I'm happy for you."
+
+me "Yeah! I pretty much have them everyday!"
+
+me "I'm too busy to eat anything else anyway."
+
+look on .1
+
+you "What is this, Stockholm Syndrome by sodium?"
+
+you "Literally anything would be better than that."
+
+me "Nah, no way."
+
+wait 5
+
+animate lookarouund
+
+me "I am trapped, I wish to escape, no more noods, no more noods, no more noods"
+
+end
+
+
+LABEL truth
+
+animate disagree
+
+you "Sure, when pigs fly."
+
+end

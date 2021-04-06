@@ -45,7 +45,7 @@ bool UConvesrationManager::ResolveCommand(FString command, FString args)
 			skipMode = false;
 			SkipUI(false);
 		}
-		else if (!command.Equals(TEXT("fade"))) {
+		else if (!command.Equals(TEXT("flag"))) {
 			return true;
 		}
 

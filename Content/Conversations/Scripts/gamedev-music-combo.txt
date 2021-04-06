@@ -1,0 +1,34 @@
+me "Hey, if you don't have someone to do music for your game..."
+
+branch ("Wanna collab?", offer) ("Ah, never mind.")
+
+look on .5
+
+you "What was that?"
+
+end
+
+
+LABEL offer
+
+you "Oh."
+
+wait 1
+
+look on .1
+
+you "Yeah, that'd be sick!"
+
+animate disagree
+
+you "I don't think your style of music would fit for my current game..."
+
+animate fistpump
+
+you "...but maybe we can make a bite-sized game in a game jam or something together!"
+
+me "That's great! Would love to work together."
+
+me "(And I can save your game from that god awful screeching...)"
+
+end

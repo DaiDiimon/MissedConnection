@@ -1,5 +1,3 @@
-flag heckling2
-
 me "Alright, they're calling for next, you're up!"
 
 look on .1

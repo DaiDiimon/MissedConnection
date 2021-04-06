@@ -37,13 +37,10 @@ enum class EConversationFlag : uint8 {
 	WORK_GAMEDEV            	UMETA(DisplayName = "WORK-GAMEDEV"),
 	WORK_WIZARD         		UMETA(DisplayName = "WORK-WIZARD"),
 	INTEREST_MUSIC          	UMETA(DisplayName = "INTEREST-MUSIC"),
+	INTEREST_COMEDY          	UMETA(DisplayName = "INTEREST-COMEDY"),
 	WORK_CHEF           		UMETA(DisplayName = "WORK-CHEF"),
 	WORK_GAMEDEV_PLUS           UMETA(DisplayName = "WORK-GAMEDEV-PLUS"),
 	INTEREST_MUSIC_PLUS         UMETA(DisplayName = "INTEREST-MUSIC-PLUS"),
-	WORK_CHEF_PLUS          	UMETA(DisplayName = "WORK-CHEF-PLUS"),
-	MEMES           		    UMETA(DisplayName = "MEMES"),
-	INTEREST_COMEDY_PLUS        UMETA(DisplayName = "INTEREST-COMEDY-PLUS"),
-	WORK_WIZARD_PLUS            UMETA(DisplayName = "WORK-WIZARD-PLUS")
 };
 
 
@@ -190,13 +187,10 @@ private:
 		{ TEXT("work-gamedev"), EConversationFlag::WORK_GAMEDEV         },
 		{ TEXT("work-wizard"), EConversationFlag::WORK_WIZARD          },
 		{ TEXT("interest-music"), EConversationFlag::INTEREST_MUSIC       },
+		{TEXT("interest-comedy"), EConversationFlag::INTEREST_COMEDY },
 		{ TEXT("work-chef"), EConversationFlag::WORK_CHEF            },
 		{ TEXT("work-gamedev-PLUS"), EConversationFlag::WORK_GAMEDEV_PLUS    },
-		{ TEXT("interest-music-PLUS"), EConversationFlag::INTEREST_MUSIC_PLUS  },
-		{ TEXT("work-chef-PLUS"), EConversationFlag::WORK_CHEF_PLUS       },
-		{ TEXT("memes"), EConversationFlag::MEMES           	 },
-		{ TEXT("interest-comedy-PLUS"), EConversationFlag::INTEREST_COMEDY_PLUS },
-		{ TEXT("work-wizard-PLUS"), EConversationFlag::WORK_WIZARD_PLUS     }
+		{ TEXT("interest-music-PLUS"), EConversationFlag::INTEREST_MUSIC_PLUS  }
 	};
 
 	TMap<FString, int> label_map;

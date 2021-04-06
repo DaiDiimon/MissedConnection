@@ -1,0 +1,39 @@
+flag usual1
+
+me "Ughhhh, I'm getting kinda bored."
+
+you "Yea, getting kicked out sucks."
+
+wait 2
+
+you "We probably deserved it though."
+
+wait 1
+
+me "..."
+
+me "What do you usually do on weekends?"
+
+you "Well, you've probably realized I don't go out too much."
+
+me "Indeed."
+
+you "So I just spend most of my free time back at my apartment"
+
+me "Oooooh, you ever just laze around all day and do nothing."
+
+you "What?"
+
+you "I mean, ever once in a while, sure."
+
+animate wondering
+
+look on 1
+
+me "Ahhhh, it's the greatest isn't it?"
+
+me "Just forgetting about responsibilities for a moment."
+
+you "That's true, it's good to give yourself that space."
+
+end

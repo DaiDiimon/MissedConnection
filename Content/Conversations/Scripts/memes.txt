@@ -1,0 +1,19 @@
+look on .5
+
+you "You like memes?"
+
+branch ("Hell yea I do", yessir) ("No") ("I watch them occasionally, so sure.")
+
+animate dejected
+
+you "And I thought we were friends...."
+
+end
+
+LABEL yessir
+
+animate fistpump
+
+you "Good."
+
+end

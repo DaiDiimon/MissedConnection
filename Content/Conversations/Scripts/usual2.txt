@@ -1,0 +1,27 @@
+me "As you might've realized-"
+
+look on 1
+
+animate fight
+
+you "You don't really need to qualify yourself you know."
+
+me "What?"
+
+animate idle
+
+you "Like prefacing everything, bracing your words."
+
+me "Oh."
+
+wait 3
+
+me "I... never really noticed."
+
+animate wondering
+
+you "Well, it ain't an issue, you don't have to stop if you don't want to."
+
+me "Still, thanks for letting me know, I appreciate it."
+
+end

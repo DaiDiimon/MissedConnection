@@ -1,0 +1,54 @@
+
+branch ("Do you like games?", gamer) ("What's your job?")
+
+you "Just a boring ol' office job, typical stuff."
+
+me "You don't like it?"
+
+you "Eh, it's fine, it's pretty chill."
+
+look on 1
+
+you "I like keeping to myself anyways, so I'm fine just tapity-tapping those Excel sheets all day."
+
+me "That doesn't sound that fun."
+
+animate wondering
+
+you "Yeah, of course it's not fun, but I don't really have to stress out about it too much, which is nice."
+
+me "Yeah, I bet..."
+
+end
+
+
+LABEL gamer
+
+flag work-gamedev-PLUS
+
+look on .1
+
+you "Hell yea I do!"
+
+animate jolly
+
+you "Honestly, that's why I got so excited to hear you were a game dev!"
+
+you "I would love to try your games out sometime."
+
+me "This is actually my first game, so you'll have to wait."
+
+animate idle
+
+me "Hey, then maybe I'll let you know when it releases!"
+
+wait 1
+
+me "Though I have no idea when that'll be..."
+
+animate jolly
+
+you "Ah, that's fine, I'm looking forward to it!"
+
+
+end

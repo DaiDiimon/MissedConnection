@@ -1,0 +1,73 @@
+look on 1
+
+you "Hey, I never got to hear, how about you?"
+
+me "Huh?"
+
+animate shrug
+
+you "You know music at all?"
+
+animate idle
+
+branch ("No, I'm tonedeaf.") ("Yeah, I know my stuff.", music)
+
+flag interest-music-PLUS
+
+you "Aww, that's not true."
+
+animate jolly
+
+you "Everyone sucks at everything when first trying it out."
+
+me "Yeah, you're right!"
+
+me "Lemme give it a shot!"
+
+me "REEEEEEEEEEEEEEEEEEEEEEEEEEEEE"
+
+animate fight
+
+you "STOP STOP STOP STOP STOP"
+
+me "How'd it go!"
+
+you "You're tonedeaf af man"
+
+end
+
+
+LABEL music
+
+animate wondering
+
+you "Oh that's cool!"
+
+me "Yup, I know what a guitar is, a piano, a-"
+
+animate fistpump
+
+you "A digeridoo?"
+
+wait 3
+
+me "Sure, a digeridoo."
+
+wait 3
+
+
+animate idle
+
+you "Wait, wait, wait, that's not what I meant though"
+
+me "Oh."
+
+me "Then yea, I don't know shit."
+
+animate dejected
+
+me "Can't even sing for the life of me"
+
+you "That's probably not true..."
+
+end

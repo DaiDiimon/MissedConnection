@@ -14,8 +14,6 @@ end
 
 LABEL here
 
-flag friend2
-
 you "Well, clearly I don't know if I came here..."
 
 me "Yeah, you can say that again!"

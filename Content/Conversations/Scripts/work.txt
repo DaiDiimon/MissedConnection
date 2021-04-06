@@ -1,0 +1,94 @@
+me "You said you were busy with..."
+
+branch ("Game Development?") ("Wizardry?", wizard) ("Being a chef?", chef)
+
+flag work-gamedev
+
+look on .1
+
+animate cocky
+
+you "Yours truly, Mr. Hideo Kojima!"
+
+me "Yea, sure thing."
+
+me "But that's pretty neat, what studio do you work at?"
+
+animate idle
+
+you "Ah, I'm actually an indie dev."
+
+me "Whoa, that's incredible!"
+
+animate fistpump
+
+you "You're damn straight!"
+
+wait 3
+
+animate dejected
+
+you "As incredible as living off ramen can be..."
+
+end
+
+
+
+LABEL wizard
+
+flag work-wizard
+
+you "Yup, that's right."
+
+wait 3
+
+me "You're serious?"
+
+look on .1
+
+you "Serious as hell."
+
+me "What do you take me for, an idiot?"
+
+me "How can you call me out when you're saying nonsense like that!"
+
+animate disagree
+
+you "Hmph, it ain't nonsense man."
+
+me "Then prove it!"
+
+wait 3
+
+animate idle
+
+look off .5
+
+you "Maybe later."
+
+end
+
+
+
+
+
+LABEL chef
+
+flag work-chef
+
+you "Yessir!"
+
+me "Ooooh, that's cool! What kind of stuff do you cook!?"
+
+you "Ramen noodles babyyyyyyy"
+
+me "..."
+
+me "So you're not a chef?"
+
+you "Nope."
+
+me "*Sigh*"
+
+
+end

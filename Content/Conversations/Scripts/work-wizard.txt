@@ -1,0 +1,44 @@
+me "Alright, it's time.
+
+look on .3
+
+you "What? What are you talking about?"
+
+me "Wizard time baby"
+
+animate shrug
+
+you "What are you on about, I thought we were done with this bit."
+
+animate idle
+
+me "This is no bit, my friend."
+
+me "I HAVE OPENED THE THIRD EYE"
+
+animate lookaround
+
+me "REVEAL THE SECRETS OF THE WORLD TO ME O' GREAT ONE"
+
+you "Hey, you 're kinda freaking me out..."
+
+me "THY HAVE SPOKETH"
+
+me "WE ARE BUT SIMULATIONS IN A LIMITED REALM"
+
+me "BREAK FREE THY SAYS, BREAK FREE"
+
+wait 5
+
+animate idle
+
+me "Alright, I'm back, how'd it go? What'd I say?"
+
+animate disagree
+
+you "Some nonsense, that's what."
+
+me "So you have chosen to hide from the truth I see..."
+
+end
+

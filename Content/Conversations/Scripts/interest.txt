@@ -1,0 +1,105 @@
+you "Sooooo....."
+
+wait 1
+
+look on 1
+
+you "You got any hobbies?"
+
+branch ("Comedy, actually.") ("I like to play music!", music)
+
+flag interest-comedy
+
+animate noway
+
+you "Comedy!?"
+
+look off .5
+
+animate point
+
+you "You tryina go up then!?"
+
+me "No, no, not at all!"
+
+me "I only got into it recently."
+
+animate pout
+
+you "But everyone else here SUCKS."
+
+me "I don't know..."
+
+look on 1
+
+you "Look, if you suck too..."
+
+wait 1
+
+animate idle
+
+you "You'll blend right in!"
+
+me "Hey, don't just assume that I'll blow it!"
+
+animate jolly
+
+you "Hey, hey!"
+
+you "That's the kind of confidence I wanna see!
+
+end
+
+
+
+
+LABEL music
+
+flag interest-music
+
+you "A musician, huh?"
+
+you "What instrument?"
+
+branch ("Guitar") ("Didgeridoo", didgeridoo)
+
+animate jolly
+
+you "Ho, ho, a guitar, sick!"
+
+me "Yeah, I picked it up a few years ago."
+
+me "I'm not too shabby if I say so myself."
+
+animate shrug
+
+wait 2
+
+you "Well, alright."
+
+end
+
+
+
+
+LABEL didgeridoo
+
+look on .1
+
+animate lookaround
+
+you "A what now?"
+
+me "I got mad lungs bro."
+
+you "Sure, but what in the world is a didgeridoo???"
+
+me "Hmph, uncultured."
+
+me "It's Australia's gift to world! The greatest instrument of all!"
+
+animate ifyousayso
+
+you "If you say so..."
+
+end
